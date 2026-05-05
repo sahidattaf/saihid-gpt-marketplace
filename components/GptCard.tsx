@@ -72,14 +72,25 @@ export function GptCard({ gpt }: GptCardProps) {
         </div>
       </div>
 
-      <a
-        href={gpt.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full mt-4 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white font-medium py-2 px-3 rounded-lg transition-all duration-200 hover:scale-105 text-sm text-center block"
-      >
-        Open GPT →
-      </a>
+      {gpt.link === "link" || !gpt.link ? (
+        <a
+          href={`https://wa.me/59995230683?text=Hi! I'm interested in "${gpt.name}".`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full mt-4 brand-gradient text-white font-medium py-2 px-3 rounded-lg transition-all duration-200 hover:opacity-90 hover:scale-105 text-sm text-center block"
+        >
+          Inquire on WhatsApp →
+        </a>
+      ) : (
+        <a
+          href={gpt.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full mt-4 brand-gradient text-white font-medium py-2 px-3 rounded-lg transition-all duration-200 hover:opacity-90 hover:scale-105 text-sm text-center block"
+        >
+          Open GPT →
+        </a>
+      )}
     </div>
   );
 }
