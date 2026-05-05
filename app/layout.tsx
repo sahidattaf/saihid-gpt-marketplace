@@ -53,6 +53,7 @@ export default function RootLayout({
                     <NavLink href="/categories">Categories</NavLink>
                     <NavLink href="/featured">Featured</NavLink>
                     <NavLink href="/architecture">Architecture</NavLink>
+                    <NavLink href="/resources">Resources</NavLink>
                     <NavLink href="/contact">Contact</NavLink>
                   </nav>
 
@@ -76,6 +77,7 @@ export default function RootLayout({
                       <a href="/categories" className="hover:text-gray-900 dark:hover:text-white transition-colors">Categories</a>
                       <a href="/featured" className="hover:text-gray-900 dark:hover:text-white transition-colors">Featured</a>
                       <a href="/architecture" className="hover:text-gray-900 dark:hover:text-white transition-colors">Architecture</a>
+                      <a href="/resources" className="hover:text-gray-900 dark:hover:text-white transition-colors">Resources</a>
                       <a href="/favorites" className="hover:text-gray-900 dark:hover:text-white transition-colors">Favorites</a>
                       <a href="/contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">Contact</a>
                     </div>
