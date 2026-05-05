@@ -1,4 +1,8 @@
+"use client";
+
+import { Heart } from "lucide-react";
 import { GptItem } from "@/lib/gptData";
+import { useMemory } from "@/contexts/MemoryContext";
 
 interface GptCardProps {
   gpt: GptItem;
@@ -19,6 +23,9 @@ const categoryColors: Record<string, string> = {
 };
 
 export function GptCard({ gpt }: GptCardProps) {
+  const { isFavorite, toggleFavorite, markViewed } = useMemory();
+  const favorited = isFavorite(gpt.name);
+
   const categoryColor =
     categoryColors[gpt.category] ??
     "bg-gray-50 dark:bg-gray-950/30 text-gray-700 dark:text-gray-300";
@@ -26,10 +33,13 @@ export function GptCard({ gpt }: GptCardProps) {
   const formatPrice = (price: number | string) =>
     price === "Coming Soon" ? "Coming Soon" : `$${price}`;
 
+  const handleOpen = () => markViewed(gpt.name);
+
   return (
     <div className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-5 border border-gray-100 dark:border-slate-800 h-full flex flex-col">
+      {/* Header */}
       <div className="flex items-start justify-between mb-3">
-        <div className="flex items-start gap-3 flex-1">
+        <div className="flex items-start gap-3 flex-1 min-w-0">
           <span className="text-3xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
             {gpt.emoji}
           </span>
@@ -44,6 +54,21 @@ export function GptCard({ gpt }: GptCardProps) {
             </span>
           </div>
         </div>
+
+        {/* Favorite button */}
+        <button
+          onClick={() => toggleFavorite(gpt.name)}
+          className="shrink-0 ml-2 p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+          aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
+        >
+          <Heart
+            className={`w-4 h-4 transition-colors ${
+              favorited
+                ? "fill-red-500 text-red-500"
+                : "text-gray-300 dark:text-gray-600 group-hover:text-gray-400"
+            }`}
+          />
+        </button>
       </div>
 
       <p className="text-gray-600 dark:text-gray-400 text-xs mb-3 line-clamp-2 flex-1">
@@ -54,6 +79,7 @@ export function GptCard({ gpt }: GptCardProps) {
         &ldquo;{gpt.useCase}&rdquo;
       </p>
 
+      {/* Footer */}
       <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-slate-800">
         <div className="text-sm font-bold text-gray-900 dark:text-white">
           {formatPrice(gpt.price)}
@@ -72,11 +98,13 @@ export function GptCard({ gpt }: GptCardProps) {
         </div>
       </div>
 
+      {/* CTA */}
       {gpt.link === "link" || !gpt.link ? (
         <a
           href={`https://wa.me/59995230683?text=Hi! I'm interested in "${gpt.name}".`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleOpen}
           className="w-full mt-4 brand-gradient text-white font-medium py-2 px-3 rounded-lg transition-all duration-200 hover:opacity-90 hover:scale-105 text-sm text-center block"
         >
           Inquire on WhatsApp →
@@ -86,6 +114,7 @@ export function GptCard({ gpt }: GptCardProps) {
           href={gpt.link}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleOpen}
           className="w-full mt-4 brand-gradient text-white font-medium py-2 px-3 rounded-lg transition-all duration-200 hover:opacity-90 hover:scale-105 text-sm text-center block"
         >
           Open GPT →
