@@ -93,4 +93,4 @@ $299
 Hi Sahid, I am interested in BOSSA AI OS — Executive Command Center. Can you tell me more?
 
 ## GPT Builder Link
-https://wa.me/59995230683?text=Hi%20Sahid%2C%20I%20want%20to%20book%20a%20demo%20for%20BOSSA%20AI%20OS.
+https://chatgpt.com/g/g-6a04d00cf9908191a3138cacbdfcc2b7-bossa-ai-os-executive-command-center
