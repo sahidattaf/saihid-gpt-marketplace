@@ -90,4 +90,4 @@ $99
 Hi Sahid, I am interested in BOSSA Action Engine GPT. Can you tell me more?
 
 ## GPT Builder Link
-https://wa.me/59995230683?text=Hi%20Sahid%2C%20I%20want%20to%20book%20a%20demo%20for%20BOSSA%20Action%20Engine%20GPT.
+https://chatgpt.com/g/g-6a0614b89ce081919eda82bc6a396795-bossa-action-engine-gpt
