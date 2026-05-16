@@ -77,14 +77,22 @@ export default function Home() {
               <div>✅ Action Engine GPT</div>
               <div>✅ Setup + support flow</div>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="https://wa.me/59995230683?text=Hi%20Sahid%2C%20I%20want%20the%20BOSSA%20AI%20OS%20Bundle%20setup%20and%20monthly%20support."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-lg bg-green-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-green-600"
               >
-                💬 Book Bundle Setup
+                💬 Book Setup Call
+              </a>
+              <a
+                href="https://buy.stripe.com/test_8x2fZh32U4JV3tx00wbZe00"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg bg-gray-900 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-black dark:bg-white dark:text-slate-950 dark:hover:bg-gray-200"
+              >
+                💳 Pay $399 Setup
               </a>
               <button
                 onClick={() =>
